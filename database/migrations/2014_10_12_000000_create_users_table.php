@@ -19,6 +19,8 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('name');
             $table->string('avatar')->nullable();
+            // eg. facebook
+            $table->string('authenticated_through')->nullable();
             $table->timestamps();
         });
     }

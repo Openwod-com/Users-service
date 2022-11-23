@@ -37,4 +37,9 @@ return [
         'expire_minutes' => env('JWT_EXPIRE_MINUTES'),
     ],
 
+    'auth' => [
+        'base_url' => env('AUTHENTICATION_SERVICE_BASE_URL'),
+        'token' => env('AUTHENTICATION_SERVICE_TOKEN'),
+    ]
+
 ];

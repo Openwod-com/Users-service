@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BasicLoginController;
 use App\Http\Controllers\PublicKeyController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,3 +19,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('/users', [UsersController::class, 'store']);
