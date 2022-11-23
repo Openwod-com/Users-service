@@ -59,4 +59,9 @@ class UsersController extends Controller
         $user->delete();
         return response(["status" => "error", "error" => "Failed creating user"], 500);
     }
+
+    public function index(Request $request)
+    {
+        return User::all(['id', 'name', 'avatar']);
+    }
 }

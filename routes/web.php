@@ -20,4 +20,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/users', [UsersController::class, 'index']);
 Route::post('/users', [UsersController::class, 'store']);
