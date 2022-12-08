@@ -22,4 +22,14 @@ GET /users
     Body:
         Inget
     Används för att hämta information om alla användare.
+
+GET /users/by_email/<email>
+    Body:
+        Inget
+    Används för att hämta information om en användare.
+
+GET /users/by_id/<id>
+    Body:
+        Inget
+    Används för att hämta information om en användare.
 ```

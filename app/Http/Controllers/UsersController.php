@@ -64,4 +64,34 @@ class UsersController extends Controller
     {
         return User::all(['id', 'name', 'avatar']);
     }
+
+    /**
+     * Returns infomration about user by email
+     */
+    public function show_by_email(Request $request, $email)
+    {
+        /** @var \Openwod\ServiceAccounts\Models\ServiceAccount $svc */
+        $svc = auth()->guard('svc')->user();
+        // Check if request was authenticated by service account and check service account permission
+        if($svc != null && $svc->tokenCan('users.view.users')) {
+            return User::where('email', $email)->first();
+        }
+        // If request wasn't authorized, only show specific values.
+        return User::where('email', $email)->first(['id', 'name', 'avatar']);
+    }
+
+    /**
+     * Returns infomration about user by id
+     */
+    public function show_by_id(Request $request, $id)
+    {
+        /** @var \Openwod\ServiceAccounts\Models\ServiceAccount $svc */
+        $svc = auth()->guard('svc')->user();
+        // Check if request was authenticated by service account and check service account permission
+        if($svc != null && $svc->tokenCan('users.view.users')) {
+            return User::where('id', $id)->first();
+        }
+        // If request wasn't authorized, only show specific values.
+        return User::where('id', $id)->first(['id', 'name', 'avatar']);
+    }
 }
