@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bfc6c738152b93a69423afacf1dd350d",
+    "content-hash": "c6f3f4b63190f3a93df90e27f67c1308",
     "packages": [
         {
             "name": "brick/math",
@@ -2165,6 +2165,53 @@
                 }
             ],
             "time": "2022-08-01T11:03:24+00:00"
+        },
+        {
+            "name": "openwod/service-accounts",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Openwod-com/service-accounts.git",
+                "reference": "dcb371cafd4c3c041a57fd87ca535eaa87049e97"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Openwod-com/service-accounts/zipball/dcb371cafd4c3c041a57fd87ca535eaa87049e97",
+                "reference": "dcb371cafd4c3c041a57fd87ca535eaa87049e97",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/sanctum": "^3.0.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Openwod\\ServiceAccounts\\ServiceAccountsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Openwod\\ServiceAccounts\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rasmus Wiktell Sundman",
+                    "email": "rasmus@rmsit.se"
+                }
+            ],
+            "description": "A package for adding service accounts to a Laravel project",
+            "support": {
+                "issues": "https://github.com/Openwod-com/service-accounts/issues",
+                "source": "https://github.com/Openwod-com/service-accounts/tree/1.0.0"
+            },
+            "time": "2022-11-15T10:17:37+00:00"
         },
         {
             "name": "phpoption/phpoption",

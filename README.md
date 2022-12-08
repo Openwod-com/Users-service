@@ -4,6 +4,9 @@ En mikrotjänst för att hantera autentisering av användare.
 ## Gymnasiearbetet
 Projektet är kopplat till gymnasiearbetet Rasmus Wiktell Sundman gör.
 
+# Service konton
+Mikrotjänsten använder service konton. Se https://github.com/Openwod-com/service-accounts
+
 # Routes
 ```
 POST /users
