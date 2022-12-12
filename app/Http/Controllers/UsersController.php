@@ -62,7 +62,11 @@ class UsersController extends Controller
 
     public function index(Request $request)
     {
-        return User::all(['id', 'name', 'avatar']);
+        return User::all(['id', 'name', 'avatar', 'created_at'])->map(function ($user) {
+            // Created_at will always be a Carbon object, need to format it before returning, thereby the change in parameter name.
+            $user->join_date = substr($user->created_at, 0,10);
+            return $user;
+        });
     }
 
     /**
@@ -77,7 +81,7 @@ class UsersController extends Controller
             return User::where('email', $email)->first();
         }
         // If request wasn't authorized, only show specific values.
-        return User::where('email', $email)->first(['id', 'name', 'avatar']);
+        return User::where('email', $email)->first(['id', 'name', 'avatar', 'created_at']);
     }
 
     /**
@@ -92,6 +96,6 @@ class UsersController extends Controller
             return User::where('id', $id)->first();
         }
         // If request wasn't authorized, only show specific values.
-        return User::where('id', $id)->first(['id', 'name', 'avatar']);
+        return User::where('id', $id)->first(['id', 'name', 'avatar', 'created_at']);
     }
 }
